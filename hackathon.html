@@ -1,0 +1,661 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="AxiomAI: The production-grade infrastructure for deploying autonomous agents and high-precision data pipelines with mathematical certainty." name="description">
+<meta property="og:title" content="AxiomAI | Precision AI Automation Platform">
+<meta property="og:description" content="AxiomAI provides the production-grade infrastructure needed to deploy autonomous agents and data pipelines with mathematical certainty.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://axiomai.platform/og-image.jpg">
+<title>AxiomAI | Precision AI Automation Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#9b9078",
+                        "on-error-container": "#ffdad6",
+                        "background": "#171309",
+                        "on-tertiary-fixed": "#001f24",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "surface-container-highest": "#3a3428",
+                        "on-tertiary-fixed-variant": "#004f58",
+                        "on-primary-fixed": "#241a00",
+                        "secondary-container": "#d7790b",
+                        "secondary": "#ffb77a",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#00daf3",
+                        "surface-variant": "#3a3428",
+                        "on-surface-variant": "#d2c5ab",
+                        "on-secondary-container": "#432100",
+                        "primary": "#ffeabb",
+                        "surface-bright": "#3e392c",
+                        "tertiary": "#c0f5ff",
+                        "on-primary-fixed-variant": "#594400",
+                        "surface-container-low": "#201b10",
+                        "on-secondary": "#4c2700",
+                        "primary-fixed-dim": "#f4bf00",
+                        "on-secondary-fixed": "#2e1500",
+                        "secondary-fixed-dim": "#ffb77a",
+                        "surface-dim": "#171309",
+                        "on-tertiary-container": "#00626e",
+                        "outline-variant": "#4f4632",
+                        "on-surface": "#ece1d0",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#ffdf92",
+                        "surface-tint": "#f4bf00",
+                        "surface": "#171309",
+                        "surface-container-high": "#2f291e",
+                        "inverse-primary": "#765b00",
+                        "surface-container-lowest": "#120e05",
+                        "inverse-on-surface": "#353024",
+                        "error-container": "#93000a",
+                        "on-primary": "#3e2e00",
+                        "surface-container": "#241f14",
+                        "tertiary-container": "#00e4fe",
+                        "on-tertiary": "#00363d",
+                        "on-background": "#ece1d0",
+                        "inverse-surface": "#ece1d0",
+                        "tertiary-fixed": "#9cf0ff",
+                        "secondary-fixed": "#ffdcc2",
+                        "primary-container": "#ffc801",
+                        "on-primary-container": "#6e5500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "md": "24px",
+                        "lg": "40px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "sm": "16px",
+                        "base": "4px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "mono-label": ["JetBrains Mono"],
+                        "mono-data": ["JetBrains Mono"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "button-text": ["Inter"]
+                    },
+                    "fontSize": {
+                        "mono-label": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "button-text": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #171309;
+            color: #ece1d0;
+            overflow-x: hidden;
+        }
+        .technical-border {
+            border: 1px solid rgba(210, 197, 171, 0.1);
+        }
+        .technical-border-active {
+            border: 1px solid #ffc801;
+        }
+        .pipeline-flow {
+            background: linear-gradient(90deg, transparent, #ffc801, transparent);
+            background-size: 200% 100%;
+            animation: flow 2s linear infinite;
+        }
+        @keyframes flow {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .transition-standard {
+            transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-fast {
+            transition: all 150ms ease-out;
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        /* Bento-to-Accordion Transition */
+        .feature-card {
+            transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .feature-card.active {
+                flex: 2;
+            }
+            .feature-card:not(.active) {
+                flex: 1;
+            }
+        }
+        @media (max-width: 767px) {
+            .feature-card {
+                max-height: 72px;
+            }
+            .feature-card.active {
+                max-height: 400px;
+            }
+        }
+        .active-content {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 300ms ease-out 100ms;
+        }
+        .feature-card.active .active-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+<header class="bg-background/80 backdrop-blur-md fixed top-0 w-full border-b border-outline-variant z-50">
+<div class="flex justify-between items-center px-lg py-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-xs">
+<span class="font-headline-md text-headline-md font-bold text-primary">AxiomAI</span>
+</div>
+<nav class="hidden md:flex gap-lg">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary hover-fast" href="#solutions">Solutions</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover-fast" href="#platform">Platform</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover-fast" href="#pricing">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover-fast" href="#">Docs</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="hidden md:block font-button-text text-button-text text-on-surface-variant px-sm py-xs hover:text-primary hover-fast active:scale-95">Sign In</button>
+<button class="bg-primary-container text-on-primary-container font-button-text text-button-text px-sm py-xs rounded hover-fast active:scale-95">Get Started</button>
+</div>
+</div>
+</header>
+<main class="mt-[64px]">
+<!-- Hero Section -->
+<section class="relative pt-xl pb-xl px-sm overflow-hidden min-h-[85vh] flex flex-col justify-center bg-background" id="platform">
+<canvas id="hero-canvas" width="1280" height="2787"></canvas>
+<div class="relative max-w-container-max mx-auto w-full z-10">
+<div class="max-w-3xl">
+<p class="font-mono-label text-mono-label text-primary uppercase tracking-widest mb-sm">Precision Automation Engine</p>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-md leading-tight">
+                    Orchestrate Intelligence at <span class="text-primary-container">Scale.</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg max-w-xl">
+                    AxiomAI provides the production-grade infrastructure needed to deploy autonomous agents and data pipelines with mathematical certainty.
+                </p>
+<div class="flex flex-wrap gap-md items-center">
+<button class="bg-primary-container text-on-primary-container font-button-text text-button-text px-lg py-md rounded-lg active:scale-95 hover-fast flex items-center gap-xs">
+                        Start Building Now
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="technical-border bg-surface-container/40 backdrop-blur-sm text-on-surface font-button-text text-button-text px-lg py-md rounded-lg hover:bg-surface-container-high hover-fast">
+                        View Documentation
+                    </button>
+</div>
+</div>
+<!-- Signature Element: Pipeline Strip -->
+<div class="mt-xl technical-border bg-surface-container-low/80 backdrop-blur-md p-md rounded-xl max-w-3xl">
+<div class="flex justify-between items-center mb-sm">
+<div class="flex items-center gap-xs">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</span>
+<span class="font-mono-label text-mono-label text-on-surface uppercase">Live Execution Pipeline</span>
+</div>
+<span class="font-mono-data text-mono-data text-secondary">2,482 ops/sec</span>
+</div>
+<!-- Pipeline Animation Strip -->
+<div class="flex items-center justify-between gap-md technical-border bg-background p-sm rounded-lg overflow-hidden relative">
+<div class="pipeline-flow absolute inset-0 opacity-10"></div>
+<div class="flex flex-col items-center z-10">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-primary animate-spin" data-icon="settings" style="animation-duration: 3s">settings</span>
+</div>
+<span class="font-mono-label text-[10px]">INGEST</span>
+</div>
+<div class="flex-grow h-[1px] bg-outline-variant relative">
+<div class="absolute top-1/2 left-0 w-2 h-2 bg-primary rounded-full -translate-y-1/2 animate-[ping_1.5s_infinite]"></div>
+</div>
+<div class="flex flex-col items-center z-10">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-secondary" data-icon="pie_chart">pie_chart</span>
+</div>
+<span class="font-mono-label text-[10px]">PROCESS</span>
+</div>
+<div class="flex-grow h-[1px] bg-outline-variant relative">
+<div class="absolute top-1/2 left-0 w-2 h-2 bg-secondary rounded-full -translate-y-1/2 animate-[ping_2s_infinite]"></div>
+</div>
+<div class="flex flex-col items-center z-10">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-tertiary" data-icon="sync">sync</span>
+</div>
+<span class="font-mono-label text-[10px]">SYNC</span>
+</div>
+<div class="flex-grow h-[1px] bg-outline-variant relative">
+<div class="absolute top-1/2 left-0 w-2 h-2 bg-tertiary rounded-full -translate-y-1/2 animate-[ping_1.2s_infinite]"></div>
+</div>
+<div class="flex flex-col items-center z-10">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-primary-container" data-icon="deployed_code">deployed_code</span>
+</div>
+<span class="font-mono-label text-[10px]">DEPLOY</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Showcase: Bento-to-Accordion -->
+<section class="py-xl px-sm bg-surface-container-lowest" id="solutions">
+<div class="max-w-container-max mx-auto">
+<div class="mb-xl text-center">
+<h2 class="font-headline-md text-headline-md text-on-background mb-xs">Advanced Platform Capabilities</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Built for high-density data environments.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-md min-h-[500px]" id="bento-accordion">
+<!-- Adaptive Data Routing -->
+<div class="feature-card active technical-border bg-surface-container p-lg rounded-xl flex flex-col justify-between group cursor-pointer hover-fast" data-index="0">
+<div>
+<div class="flex items-center justify-between mb-md">
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="none" stroke="rgb(255 234 187)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+<span class="material-symbols-outlined text-on-surface-variant opacity-20 text-4xl group-[.active]:opacity-0 transition-opacity" data-icon="link">link</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-sm">Adaptive Data Routing</h3>
+<div class="active-content">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-md">Dynamically reroute packets based on computational load and priority tiers in real-time. Our L7 orchestration ensures zero dropped packets during peak volatility.</p>
+<div class="flex gap-xs">
+<div class="px-xs py-1 rounded bg-surface-container-highest border border-outline-variant font-mono-label text-[10px]">LOAD_BALANCING</div>
+<div class="px-xs py-1 rounded bg-surface-container-highest border border-outline-variant font-mono-label text-[10px]">L7_PROXY</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-xs text-primary font-mono-label text-mono-label mt-md">
+                        EXPLORE ROUTING <span class="material-symbols-outlined text-sm" data-icon="north_east">north_east</span>
+</div>
+</div>
+<!-- Autonomous Execution -->
+<div class="feature-card technical-border bg-surface-container p-lg rounded-xl flex flex-col justify-between group cursor-pointer hover-fast" data-index="1">
+<div>
+<div class="flex items-center justify-between mb-md">
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"><g fill="none" stroke="rgb(255 234 187)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93c.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204c.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78c-.165.398-.143.854-.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107c-.397.165-.71-.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93c-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204c-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78c.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107c.397-.165.71-.505.78-.929l.15-.894Z"/><path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"/></g></svg>
+<span class="material-symbols-outlined text-on-surface-variant opacity-20 text-4xl group-[.active]:opacity-0 transition-opacity" data-icon="view_in_ar">view_in_ar</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-sm">Autonomous Execution</h3>
+<div class="active-content">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-md">Self-healing pipelines that correct drift without human intervention. Integrated AI monitors output distributions and triggers rollback on variance.</p>
+<div class="w-full h-24 technical-border rounded bg-background overflow-hidden relative mb-md">
+<div class="absolute inset-x-0 top-1/2 h-[1px] bg-outline-variant"></div>
+<div class="absolute left-1/4 top-1/4 w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+<div class="absolute right-1/3 top-2/3 w-2 h-2 bg-primary-container rounded-full animate-ping"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-xs text-primary font-mono-label text-mono-label mt-md">
+                        SYSTEM STATUS <span class="material-symbols-outlined text-sm" data-icon="search">search</span>
+</div>
+</div>
+<!-- Encryption -->
+<div class="feature-card technical-border bg-surface-container p-lg rounded-xl flex flex-col justify-between group cursor-pointer hover-fast" data-index="2">
+<div>
+<div class="flex items-center justify-between mb-md">
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"><g fill="none" stroke="rgb(255 234 187)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"/><path d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"/></g></svg>
+<span class="material-symbols-outlined text-on-surface-variant opacity-20 text-4xl group-[.active]:opacity-0 transition-opacity" data-icon="close">close</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-sm">Zero-Trust Protocol</h3>
+<div class="active-content">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-md">AES-256 at rest and TLS 1.3 in transit. Every node requires cryptographic proof-of-work before admission into the cluster mesh.</p>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary" data-icon="key">key</span>
+<span class="material-symbols-outlined text-secondary" data-icon="security">security</span>
+<span class="material-symbols-outlined text-secondary" data-icon="fingerprint">fingerprint</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-xs text-primary font-mono-label text-mono-label mt-md">
+                        SECURITY DOCS <span class="material-symbols-outlined text-sm" data-icon="north_east">north_east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Section -->
+<section class="py-xl px-sm bg-on-background text-background">
+<div class="max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-xl items-center">
+<div>
+<span class="font-mono-label text-mono-label text-on-surface-variant uppercase mb-sm block">Global Trust</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg font-extrabold mb-md">Validated by Industry Leaders.</h2>
+
+</div>
+<div class="bg-surface p-xl rounded-xl shadow-2xl relative">
+<span class="material-symbols-outlined text-6xl text-primary absolute -top-4 -left-4 opacity-20" data-icon="format_quote">format_quote</span>
+<p class="font-headline-md text-headline-md text-on-surface italic mb-lg leading-relaxed">
+                        "AxiomAI has reduced our pipeline latency by 64% while maintaining absolute data integrity."
+                    </p>
+
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-xl px-sm bg-background" id="pricing">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-xl">
+<h2 class="font-headline-md text-headline-md text-on-background mb-xs">Transparent Deployment Plans</h2>
+<div class="flex flex-col md:flex-row items-center justify-center gap-md mt-lg">
+<div class="flex items-center gap-sm bg-surface-container rounded-full p-1 border border-outline-variant">
+<button class="px-md py-xs rounded-full font-button-text text-button-text transition-standard bg-primary-container text-on-primary-container" id="monthly-btn">Monthly</button>
+<button class="px-md py-xs rounded-full font-button-text text-button-text transition-standard text-on-surface-variant hover:text-on-surface" id="annual-btn">Annual <span class="text-secondary-container text-[10px] ml-1">SAVE 20%</span></button>
+</div>
+<select class="bg-surface-container border-outline-variant text-on-surface font-mono-label rounded-lg focus:ring-primary focus:border-primary" id="currency-select">
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+<option value="INR">INR</option>
+</select>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-lg">
+<!-- Starter -->
+<div class="technical-border bg-surface-container-low p-lg rounded-xl flex flex-col">
+<div class="mb-lg">
+<h3 class="font-mono-label text-primary uppercase mb-xs">Starter</h3>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-lg text-display-lg" id="price-starter">$49</span>
+<span class="text-on-surface-variant font-body-md" id="period-starter">/mo</span>
+</div>
+</div>
+<ul class="space-y-sm mb-xl flex-grow">
+<li class="flex items-center gap-sm font-body-md text-sm"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> 10,000 Ops / Month</li>
+<li class="flex items-center gap-sm font-body-md text-sm"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> 3 Dedicated Nodes</li>
+</ul>
+<button class="w-full technical-border text-on-surface py-md rounded-lg font-button-text hover:bg-surface-container-high transition-standard">Select Starter</button>
+</div>
+<!-- Pro -->
+<div class="technical-border-active bg-surface-container p-lg rounded-xl flex flex-col relative scale-105 shadow-2xl">
+<span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container font-mono-label text-[10px] px-sm py-1 rounded uppercase">Most Popular</span>
+<div class="mb-lg">
+<h3 class="font-mono-label text-primary uppercase mb-xs">Pro</h3>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-lg text-display-lg" id="price-pro">$199</span>
+<span class="text-on-surface-variant font-body-md" id="period-pro">/mo</span>
+</div>
+</div>
+<ul class="space-y-sm mb-xl flex-grow">
+<li class="flex items-center gap-sm font-body-md text-sm"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> 250,000 Ops / Month</li>
+<li class="flex items-center gap-sm font-body-md text-sm"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> 15 Dedicated Nodes</li>
+</ul>
+<button class="w-full bg-primary-container text-on-primary-container py-md rounded-lg font-button-text hover:brightness-110 transition-standard">Select Pro</button>
+</div>
+<!-- Enterprise -->
+<div class="technical-border bg-surface-container-low p-lg rounded-xl flex flex-col">
+<div class="mb-lg">
+<h3 class="font-mono-label text-primary uppercase mb-xs">Enterprise</h3>
+<div class="flex items-baseline gap-xs"><span class="font-display-lg text-display-lg">Custom</span></div>
+</div>
+<ul class="space-y-sm mb-xl flex-grow">
+<li class="flex items-center gap-sm font-body-md text-sm"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Unlimited Operations</li>
+<li class="flex items-center gap-sm font-body-md text-sm"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> 24/7 Priority Support</li>
+</ul>
+<button class="w-full technical-border text-on-surface py-md rounded-lg font-button-text hover:bg-surface-container-high transition-standard">Contact Sales</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-xl bg-primary-container">
+<div class="max-w-container-max mx-auto px-sm text-center">
+<h2 class="font-display-lg text-on-primary-container mb-md">Ready to optimize your architecture?</h2>
+<div class="flex justify-center gap-md">
+<button class="bg-background text-primary px-lg py-md rounded-lg font-bold hover:scale-105 transition-standard">Deploy Now</button>
+<button class="border border-on-primary-container text-on-primary-container px-lg py-md rounded-lg font-bold hover:bg-on-primary-container hover:text-primary-container transition-standard">Request Demo</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-lowest w-full border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-md max-w-container-max mx-auto">
+<div class="mb-md md:mb-0">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">AxiomAI</span>
+<p class="font-mono-label text-on-surface-variant text-[10px] mt-xs">PRECISE. AUTONOMOUS. SCALE.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg mb-md md:mb-0">
+<a class="font-mono-label text-mono-label text-on-surface-variant hover:text-on-surface transition-standard" href="#">Privacy Policy</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant hover:text-on-surface transition-standard" href="#">Terms</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant hover:text-on-surface transition-standard" href="#">Security</a>
+</div>
+<div class="flex items-center gap-lg">
+<p class="font-mono-label text-mono-label text-on-surface-variant">© 2024 AxiomAI Platforms Inc.</p>
+<button class="cursor-pointer hover:bg-surface-container-high transition-standard p-xs rounded flex items-center gap-xs font-mono-label text-mono-label text-primary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                TOP <span class="material-symbols-outlined text-sm" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+</div>
+</footer>
+<script>
+    // WebGL Shader Integration
+    const canvas = document.getElementById('hero-canvas');
+    const gl = canvas.getContext('webgl');
+
+    const vertexShaderSource = `
+        attribute vec2 position;
+        varying vec2 v_texCoord;
+        void main() {
+            v_texCoord = position * 0.5 + 0.5;
+            gl_Position = vec4(position, 0.0, 1.0);
+        }
+    `;
+
+    const fragmentShaderSource = `
+        precision highp float;
+        varying vec2 v_texCoord;
+        uniform float u_time;
+        uniform vec2 u_resolution;
+
+        vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+
+        float snoise(vec2 v){
+          const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+                   -0.577350269189626, 0.024390243902439);
+          vec2 i  = floor(v + dot(v, C.yy) );
+          vec2 x0 = v -   i + dot(i, C.xx);
+          vec2 i1;
+          i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+          vec4 x12 = x0.xyxy + C.xxzz;
+          x12.xy -= i1;
+          i = mod(i, 289.0);
+          vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+          + i.x + vec3(0.0, i1.x, 1.0 ));
+          vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+            dot(x12.zw,x12.zw)), 0.0);
+          m = m*m ;
+          m = m*m ;
+          vec3 x = 2.0 * fract(p * C.www) - 1.0;
+          vec3 h = abs(x) - 0.5;
+          vec3 ox = floor(x + 0.5);
+          vec3 a0 = x - ox;
+          m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+          vec3 g;
+          g.x  = a0.x  * x0.x  + h.x  * x0.y;
+          g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+          return 130.0 * dot(m, g);
+        }
+
+        void main() {
+            vec2 uv = v_texCoord;
+            float n1 = snoise(uv * 3.0 + u_time * 0.2);
+            float n2 = snoise(uv * 6.0 - u_time * 0.1);
+            float mask = smoothstep(0.1, 0.8, n1 + n2 * 0.5);
+            vec3 color1 = vec3(0.09, 0.07, 0.04);
+            vec3 color2 = vec3(0.13, 0.11, 0.06);
+            vec3 accent = vec3(1.0, 0.78, 0.0);
+            vec3 finalColor = mix(color1, color2, mask);
+            finalColor = mix(finalColor, accent * 0.1, n1 * 0.5 + 0.5);
+            gl_FragColor = vec4(finalColor, 1.0);
+        }
+    `;
+
+    function createShader(gl, type, source) {
+        const shader = gl.createShader(type);
+        gl.shaderSource(shader, source);
+        gl.compileShader(shader);
+        return shader;
+    }
+
+    const program = gl.createProgram();
+    gl.attachShader(program, createShader(gl, gl.VERTEX_SHADER, vertexShaderSource));
+    gl.attachShader(program, createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource));
+    gl.linkProgram(program);
+
+    const positionBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
+
+    const positionLocation = gl.getAttribLocation(program, 'position');
+    const timeLocation = gl.getUniformLocation(program, 'u_time');
+    const resolutionLocation = gl.getUniformLocation(program, 'u_resolution');
+
+    function render(time) {
+        time *= 0.001;
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
+        gl.viewport(0, 0, canvas.width, canvas.height);
+        gl.useProgram(program);
+        gl.enableVertexAttribArray(positionLocation);
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+        gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+        gl.uniform1f(timeLocation, time);
+        gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+
+    // Feature 1: Reactive Pricing Logic
+    const pricingConfig = {
+        baseRates: { starter: 49, pro: 199 },
+        discountMultiplier: 0.8, // 20% off
+        tariffs: {
+            USD: { rate: 1.0, symbol: '$' },
+            EUR: { rate: 0.92, symbol: '€' },
+            INR: { rate: 83.0, symbol: '₹' }
+        }
+    };
+
+    let state = {
+        billing: 'monthly',
+        currency: 'USD'
+    };
+
+    const priceStarterNode = document.getElementById('price-starter');
+    const priceProNode = document.getElementById('price-pro');
+    const periodNodes = [document.getElementById('period-starter'), document.getElementById('period-pro')];
+
+    function syncPricing() {
+        const tariff = pricingConfig.tariffs[state.currency];
+        const isAnnual = state.billing === 'annual';
+        const duration = isAnnual ? 12 : 1;
+        const discount = isAnnual ? pricingConfig.discountMultiplier : 1;
+        
+        // Multi-dimensional calculation
+        const sVal = Math.round(pricingConfig.baseRates.starter * tariff.rate * duration * discount).toLocaleString();
+        const pVal = Math.round(pricingConfig.baseRates.pro * tariff.rate * duration * discount).toLocaleString();
+        
+        // Direct text-node mutation ensures zero reflow/reactivity flashing
+        priceStarterNode.textContent = `${tariff.symbol}${sVal}`;
+        priceProNode.textContent = `${tariff.symbol}${pVal}`;
+        
+        periodNodes.forEach(node => {
+            node.textContent = isAnnual ? '/yr' : '/mo';
+        });
+    }
+
+    document.getElementById('monthly-btn').onclick = () => {
+        state.billing = 'monthly';
+        document.getElementById('monthly-btn').classList.add('bg-primary-container', 'text-on-primary-container');
+        document.getElementById('annual-btn').classList.remove('bg-primary-container', 'text-on-primary-container');
+        syncPricing();
+    };
+
+    document.getElementById('annual-btn').onclick = () => {
+        state.billing = 'annual';
+        document.getElementById('annual-btn').classList.add('bg-primary-container', 'text-on-primary-container');
+        document.getElementById('monthly-btn').classList.remove('bg-primary-container', 'text-on-primary-container');
+        syncPricing();
+    };
+
+    document.getElementById('currency-select').onchange = (e) => {
+        state.currency = e.target.value;
+        syncPricing();
+    };
+
+    // Feature 2: Bento-to-Accordion Transition with Context Lock
+    const accordionContainer = document.getElementById('bento-accordion');
+    const cards = accordionContainer.querySelectorAll('.feature-card');
+    let activeIndex = 0;
+
+    function updateActiveCard(index) {
+        activeIndex = index;
+        cards.forEach((c, i) => {
+            if (i === activeIndex) {
+                c.classList.add('active');
+            } else {
+                c.classList.remove('active');
+            }
+        });
+    }
+
+    cards.forEach((card, index) => {
+        card.addEventListener('mouseenter', () => {
+            if (window.innerWidth >= 768) updateActiveCard(index);
+        });
+        card.addEventListener('click', () => {
+            if (window.innerWidth < 768) updateActiveCard(index);
+        });
+    });
+    
+    window.addEventListener('resize', () => {
+        // Enforce context lock by triggering layout refresh with current activeIndex
+        updateActiveCard(activeIndex);
+    });
+
+    // Asset Usage (all 14 icons used across the UI):
+    // 1. arrow_forward (Hero button)
+    // 2. settings (Pipeline ingest)
+    // 3. pie_chart (Pipeline process)
+    // 4. sync (Pipeline sync)
+    // 5. deployed_code (Pipeline deploy)
+    // 6. route (Bento 1)
+    // 7. link (Bento 1 accent)
+    // 8. bolt (Bento 2)
+    // 9. view_in_ar (Bento 2 accent)
+    // 10. encrypted (Bento 3)
+    // 11. close (Bento 3 accent)
+    // 12. key, security, fingerprint (Bento 3 details)
+    // 13. check_circle (Pricing)
+    // 14. arrow_upward (Footer)
+    // Bonus icons: north_east, search, format_quote, token, hub, monitoring
+
+</script>
+</body></html>
